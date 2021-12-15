@@ -13,11 +13,11 @@ menu:
 
 ---
 
-This document guides you through the update from Camunda Platform `7.16.x` to `7.17.0`. It covers these use cases:
+This document guides you through the update from Camunda Platform `7.16.x` to `7.17.0` and covers the following use cases:
 
-1. For administrators and developers: [Database Updates](#database-updates)
-1. For administrators and developers: [Full Distribution Update](#full-distribution)
-1. For administrators: [Standalone Web Application](#standalone-web-application)
+1. For administrators and developers: [Database updates](#database-updates)
+1. For administrators and developers: [Full distribution update](#full-distribution)
+1. For administrators: [Standalone web application](#standalone-web-application)
 1. For developers: [Spin configuration options](#set-variables-on-process-instance-migration)
 
 This guide covers mandatory migration steps as well as optional considerations for the initial configuration of new 
@@ -39,23 +39,23 @@ with a **shared process engine**.
 
 The following steps are required:
 
-1. Update the Camunda libraries and applications inside the application server
-2. Migrate custom process applications
+1. Update the Camunda libraries and applications inside the application server.
+2. Migrate custom process applications.
 
-Before starting, make sure that you have downloaded the Camunda Platform 7.17 distribution for the application server 
-you use. It contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the 
+Before starting, ensure you have downloaded the Camunda Platform 7.17 distribution for the application server 
+you use. This contains the SQL scripts and libraries required for the update. This guide assumes you have unpacked the 
 distribution to a path named `$DISTRIBUTION_PATH`.
 
 ## Camunda libraries and applications
 
-Please choose the application server you are working with from the following list:
+Choose the application server you are working with from the following list:
 
 * [JBoss AS/Wildfly]({{< ref "/update/minor/716-to-717/jboss.md" >}})
 * [Apache Tomcat]({{< ref "/update/minor/716-to-717/tomcat.md" >}})
 * [Oracle WebLogic]({{< ref "/update/minor/716-to-717/wls.md" >}})
 * [IBM WebSphere]({{< ref "/update/minor/716-to-717/was.md" >}})
 
-## Custom Process Applications
+## Custom process applications
 
 For every process application, the Camunda dependencies should be updated to the new version. Which dependencies you 
 have is application- and server-specific. Typically, the dependencies consist of any of the following:
@@ -67,7 +67,7 @@ have is application- and server-specific. Typically, the dependencies consist of
 
 There are no new mandatory dependencies for process applications.
 
-# Standalone Web Application
+# Standalone web application
 
 If you use a standalone web application, replace the current `.war` artifact by its new version. 
 Take the following steps to complete the update:
@@ -83,10 +83,10 @@ Take the following steps to complete the update:
 # Spin configuration options
 
 Version 7.17 introduces configuration properties for the Spin `DomXmlDataFormat` module. The `DomXmlDataFormat`
-configuration properties provide options to toggle External XML Entity (XXE) processing, as well as secure processing
+configuration properties provide options to toggle **External XML Entity (XXE)** processing, as well as secure processing
 for the Spin XML parser.
 
-By default, we disabled XXE processing, and enabled secure processing of XML documents, to protect the Spin XML
+By default, we disabled XXE processing, and enabled secure processing of XML documents to protect the Spin XML
 parser against [XXE attacks](https://en.wikipedia.org/wiki/XML_external_entity_attack) and
 [Billion laughs attacks](https://en.wikipedia.org/wiki/Billion_laughs_attack).
 

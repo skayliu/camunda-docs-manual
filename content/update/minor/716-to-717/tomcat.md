@@ -11,19 +11,19 @@ menu:
 ---
 
 The following steps describe how to update the Camunda artifacts on a Tomcat server in a shared process engine setting.
-For the entire procedure, refer to the [update guide][update-guide]. If not already done, make sure to download the
+Throughout the procedure, refer to the [update guide][update-guide]. If not already done, download the
 [Camunda Platform 7.17 Tomcat distribution][tomcat-distribution].
 
 The update procedure takes the following steps:
 
-1. Update the Camunda Platform Core Libraries
-2. Update Optional Camunda Platform Libraries
-3. Update Web Applications
+1. Update the Camunda Platform core libraries.
+2. Update optional Camunda Platform libraries.
+3. Update web applications.
 
 In each of the following steps, the identifier `$*_VERSION` refers to the current versions and the new versions of 
 the artifacts.
 
-# 1. Update the Camunda Platform Core Libraries
+# 1. Update the Camunda Platform core libraries
 
 Replace the following libraries in the folder `$TOMCAT_HOME/lib/` with their new versions from the folder 
 `$TOMCAT_DISTRIBUTION/lib/`:
@@ -47,18 +47,18 @@ Replace the following libraries in the folder `$TOMCAT_HOME/lib/` with their new
 * `freemarker-$FREEMARKER_VERSION.jar`
 * `mybatis-$MYBATIS_VERSION.jar`
 
-# 2. Update Optional Camunda Platform Libraries
+# 2. Update optional Camunda Platform libraries
 
 In addition to the core libraries, there may be optional artifacts in `$TOMCAT_HOME/lib/` for LDAP integration, 
 Camunda Connect, Camunda Spin, and scripting. If you use any of these extensions, the following update steps apply:
 
-## LDAP Integration
+## LDAP integration
 
 Copy the following library from `$TOMCAT_DISTRIBUTION/lib` to the folder `$TOMCAT_HOME/lib/`, if present:
 
 * `camunda-identity-ldap-$PLATFORM_VERSION.jar`
 
-## Camunda Connect Plugin
+## Camunda Connect plugin
 
 Copy the following libraries from `$TOMCAT_DISTRIBUTION/lib` to the folder `$TOMCAT_HOME/lib/`, if present:
 
@@ -83,13 +83,13 @@ Copy the following libraries from `$TOMCAT_DISTRIBUTION/lib` to the folder `$TOM
 * `regex-21.1.0.jar`
 * `truffle-api-21.1.0.jar`
 
-# 3. Update Web Applications
+# 3. Update web applications
 
 ## Update REST API
 
 The following steps are required to update the Camunda REST API on a Tomcat instance:
 
-1. Undeploy an existing web application with a name like `camunda-engine-rest`
+1. Undeploy an existing web application with a name like `camunda-engine-rest`.
 2. Download the REST API web application archive from our [Maven Nexus Server][nexus-restapi] Alternatively, switch 
    to the private repository for the enterprise version (credentials from license required). Choose the correct version 
    named `$PLATFORM_VERSION/camunda-engine-rest-$PLATFORM_VERSION-tomcat.war`.
@@ -100,7 +100,7 @@ The following steps are required to update the Camunda REST API on a Tomcat inst
 The following steps are required to update the Camunda web applications Cockpit, Tasklist, and Admin on a 
 Tomcat instance:
 
-1. Undeploy an existing web application with a name like `camunda-webapp`
+1. Undeploy an existing web application with a name like `camunda-webapp`.
 2. Download the Camunda web application archive from our [Maven Nexus Server][nexus-webapp]. Alternatively, switch 
    to the private repository for the enterprise version (credentials from license required). Choose the correct version 
    named `$PLATFORM_VERSION/camunda-webapp-tomcat-$PLATFORM_VERSION.war`.
