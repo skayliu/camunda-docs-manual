@@ -19,6 +19,7 @@ This document guides you through the update from Camunda Platform `7.16.x` to `7
 1. For administrators and developers: [Full Distribution Update](#full-distribution)
 1. For administrators: [Standalone Web Application](#standalone-web-application)
 1. For administrators and developers: [Task Worker Metrics](#task-worker-metrics)
+1. For developers: [Extended Camunda Run CORS configuration properties](#extended-camunda-run-cors-configuration-properties)
 
 This guide covers mandatory migration steps and optional considerations for the initial configuration of new functionality included in Camunda Platform 7.16.
 
@@ -71,3 +72,11 @@ Take the following steps to complete the update:
 
 Starting from version 7.17, the task worker metrics are displayed by default.
 If this causes slow page loading, you can turn it off in the [admin webapp configuration.]({{< ref "/webapps/admin/configuration.md#task-worker-metrics" >}}).
+
+# Extended Camunda Run CORS configuration properties
+
+Version 7.17 of the Camunda Run distro brings new [CORS configuration properties][cors-properties]. There are no
+changes in the existing CORS behavior. The new CORS configuration properties allow for additional parameters, like 
+credentials support, to be set on the CORS Filter.
+
+[cors-properties]: {{< ref "/user-guide/camunda-bpm-run.md#cross-origin-resource-sharing" >}}
